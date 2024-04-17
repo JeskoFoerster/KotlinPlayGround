@@ -1,10 +1,11 @@
 fun main() {
+
     println("Entered Main!")
 
     //take input
     println("Please enter id of the program:")
-    val userInput = readlnOrNull()
-    val number = userInput?.toInt()
+    val userInput: String = readln()
+    val number : Int = userInput.toInt()
 
     //decide what program to run
     when(number) {

@@ -1,10 +1,55 @@
+data class Hurray(val str1: String, val int2: Int)
 
+class Adress(val street:String, val number:Int)
 fun main(){
+    /*
+    val test : Hurray = Hurray("test", 2)
+    println(test)
+    val(name, value ) = test
+    println("Name: $name Wert: $value")
+
+    // Create a mutable array of integers
+    val mutableArray = mutableListOf<Int>()
+
+    // Add elements to the mutable array
+    mutableArray.add(1)
+    mutableArray.add(2)
+    mutableArray.add(3)
+
+    // Print the mutable array
+    println("Mutable Array: $mutableArray")
+
+
+    var addresse1 : Adress = Adress("Steinstraße", 1)
+    println(addresse1)
+    println("${addresse1.street} and ${addresse1.number}")
+
+    var address2 = addresse1
+    address2.number == 2
+
+    println(addresse1.number)
+    println(address2.number)
+
+
+    val zahl1 = 1.0
+    val zahl2 = 4
+    val bigger = if (zahl1 > zahl2) "Hi" else zahl2
+    println(bigger::class)
+
+
+    val w = "100".toDouble()
+    println(w)
+
+    val test : Hurray = Hurray("test", 2)
+    println(test)
+    val(name, value ) = test
+    println("Name: $name Wert: $value")
     hurray()
     investment()
     val word:String = sortAlphabetic()
     println(word)
     testList()
+    */
 }
 
 fun hurray(){
