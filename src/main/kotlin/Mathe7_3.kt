@@ -18,6 +18,6 @@ fun main() {
 
     // Print the results
     for ((sum, count) in sortedMap) {
-        println("$sum: ${count*100/numberOfRuns.toDouble()}")
+        println("$sum: ${count*100/numberOfRuns.toDouble()}%")
     }
 }
