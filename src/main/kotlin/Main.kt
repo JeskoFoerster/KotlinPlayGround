@@ -5,13 +5,13 @@ fun main() {
 
 
     println(lars)
-    lars.isAdult()
     lars.has_hobby("Handball")
 
 }
 
 class Person(var vorname: String, var nachname:String, alter:Int = 0, var hobbies: List<String>){
 
+    //Klausr/Praktikum! berechnete eigenschaften!
     var alter = alter
         set(alter){
             if(this.alter > alter) throw Exception("Yeet")
@@ -23,22 +23,11 @@ class Person(var vorname: String, var nachname:String, alter:Int = 0, var hobbie
     var volljährig: Boolean = false
         get() = alter >= 18
 
-        set(value){
-            if(alter>18){
-                field = true
-                alter = 18
-            }
-        }
-
 
     fun gibAlter() = alter
 
     override fun toString(): String {
         return "$vorname $nachname"
-    }
-
-    fun isAdult():Boolean{
-        return alter >= 18
     }
 
     fun isAdult2() = alter>= 18

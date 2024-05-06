@@ -9,8 +9,8 @@ fun main() {
         val dice2 = Random.nextInt(1, 7)
         val dice3 = Random.nextInt(1, 7)
         val sum = dice1 + dice2 + dice3
-        val counter = mathMap[sum] ?: 0
-        mathMap[sum] = counter + 1
+        var counter = mathMap[sum] ?: 0
+        mathMap[sum] = ++counter
     }
 
     // Order the map by values in descending order
