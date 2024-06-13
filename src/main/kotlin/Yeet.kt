@@ -1,0 +1,1 @@
+class Yeet(var error: String = "Your code has been yeeted") : Exception(error) {}
