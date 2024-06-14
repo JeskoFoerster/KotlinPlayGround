@@ -1,11 +1,7 @@
+import de.thkoeln.kohls.ap2.listen_kommentiert.SimpleLinkedList
+
 fun main() {
-    val hobbies:List<String> = listOf("Handball", "Fußball")
-    val susi = Person("Susi", "Sonne", 8, hobbies)
-    val lars = Person("Lars", "Lustig", -23, hobbies)
-
-
-    println(lars)
-    lars.has_hobby("Handball")
+    var linkedList = SimpleLinkedList()
 
 }
 
