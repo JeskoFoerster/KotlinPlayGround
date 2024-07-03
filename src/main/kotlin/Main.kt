@@ -1,34 +1,40 @@
 import de.thkoeln.kohls.ap2.listen_kommentiert.SimpleLinkedList
 
 fun main() {
-    var linkedList = SimpleLinkedList()
+    println("Please enter numbers line by line (enter an empty line to finish):")
 
-}
-
-class Person(var vorname: String, var nachname:String, alter:Int = 0, var hobbies: List<String>){
-
-    //Klausr/Praktikum! berechnete eigenschaften!
-    var alter = alter
-        set(alter){
-            if(this.alter > alter) throw Exception("Yeet")
-            if(this.alter < 0) throw Exception("Yeet")
-            field = alter
+    val numbers = mutableListOf<Int>()
+    while (true) {
+        val line = readLine()
+        if (line.isNullOrBlank()) {
+            break
         }
-        get() = field
-
-    var volljährig: Boolean = false
-        get() = alter >= 18
-
-
-    fun gibAlter() = alter
-
-    override fun toString(): String {
-        return "$vorname $nachname"
+        numbers.add(line.toInt())
     }
 
-    fun isAdult2() = alter>= 18
+    var count = 0
+    val numberChunks = mutableListOf<MutableList<Int>>()
+    var accumulator = mutableListOf<Int>()
 
-    fun has_hobby(potentialHobby:String):Boolean{
-        return hobbies.contains(potentialHobby)
+    for (number in numbers) {
+        accumulator.add(number)
+        count++
+
+        if (count == 1000) {
+            numberChunks.add(accumulator)
+            accumulator = mutableListOf() // Reset accumulator
+            count = 0
+        }
+    }
+
+    // Add the last chunk if it has any remaining numbers
+    if (accumulator.isNotEmpty()) {
+        numberChunks.add(accumulator)
+    }
+
+    for (chunk in numberChunks) {
+        val csvString = chunk.joinToString(separator = ",")
+        println(csvString)
     }
 }
+
